@@ -30,9 +30,6 @@ class JanusGateway < Formula
   depends_on "zlib"
 
   def install
-    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib}, -L#{Formula["srtp"].opt_lib}"
-    ENV.prepend "CFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["srtp"].opt_include}"
-    
     args = %W[
       --enable-post-processing
       --enable-openssl
